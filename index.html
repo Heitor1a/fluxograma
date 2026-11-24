@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fluxograma Puro HTML & CSS</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <h1>Fluxograma de Decisão</h1>
+    <p>Clique nas opções abaixo para construir o caminho</p>
+  </header>
+
+  <!-- Formulário permite que o botão "Recomeçar" (type="reset") limpe tudo sem JS -->
+  <form class="app">
+
+    <!-- Controles invisíveis (Estado do Fluxograma) -->
+    <input type="radio" name="passo1" id="p1-design" class="state" />
+    <input type="radio" name="passo1" id="p1-codigo" class="state" />
+
+    <input type="radio" name="passo2-design" id="p2-ui" class="state" />
+    <input type="radio" name="passo2-design" id="p2-marca" class="state" />
+
+    <input type="radio" name="passo2-codigo" id="p2-front" class="state" />
+    <input type="radio" name="passo2-codigo" id="p2-back" class="state" />
+
+    <div class="toolbar">
+      <button type="reset" class="btn-reset">↻ Recomeçar Fluxograma</button>
+    </div>
+
+    <!-- ÁREA DO FLUXOGRAMA -->
+    <div class="flowchart">
+
+      <!-- NÍVEL 1: PERGUNTA INICIAL -->
+      <div class="node start">
+        <span class="badge">Início</span>
+        <h2>O que você mais gosta de fazer?</h2>
+        <div class="choices">
+          <label for="p1-design" class="choice-btn opt-design">🎨 Criar visuais e cores</label>
+          <label for="p1-codigo" class="choice-btn opt-codigo">💻 Resolver problemas com lógica</label>
+        </div>
+      </div>
+
+      <!-- CAMINHO A: DESIGN -->
+      <div class="branch branch-design">
+        <div class="connector">
+          <div class="line"></div>
+          <span class="tag">Criar visuais e cores</span>
+          <div class="line"></div>
+          <span class="arrow">▼</span>
+        </div>
+
+        <div class="node question">
+          <span class="badge">Passo 2</span>
+          <h2>Qual formato prefere?</h2>
+          <div class="choices">
+            <label for="p2-ui" class="choice-btn opt-ui">📱 Telas de sites e apps</label>
+            <label for="p2-marca" class="choice-btn opt-marca">✏️ Logotipos e ilustrações</label>
+          </div>
+        </div>
+      </div>
+
+      <!-- CAMINHO B: CÓDIGO -->
+      <div class="branch branch-codigo">
+        <div class="connector">
+          <div class="line"></div>
+          <span class="tag">Resolver problemas com lógica</span>
+          <div class="line"></div>
+          <span class="arrow">▼</span>
+        </div>
+
+        <div class="node question">
+          <span class="badge">Passo 2</span>
+          <h2>Onde prefere atuar?</h2>
+          <div class="choices">
+            <label for="p2-front" class="choice-btn opt-front">🌐 Na parte visual do navegador</label>
+            <label for="p2-back" class="choice-btn opt-back">⚙️ Nos servidores e banco de dados</label>
+          </div>
+        </div>
+      </div>
+
+      <!-- RESULTADOS FINAIS (NÍVEL 3) -->
+      <div class="branch res-ui">
+        <div class="connector">
+          <div class="line"></div>
+          <span class="tag">Telas de sites e apps</span>
+          <div class="line"></div>
+          <span class="arrow">▼</span>
+        </div>
+        <div class="node result">
+          <span class="badge">Resultado</span>
+          <h2>✨ UI/UX Designer</h2>
+          <p>Você projeta experiências incríveis e intuitivas para usuários.</p>
+        </div>
+      </div>
+
+      <div class="branch res-marca">
+        <div class="connector">
+          <div class="line"></div>
+          <span class="tag">Logotipos e ilustrações</span>
+          <div class="line"></div>
+          <span class="arrow">▼</span>
+        </div>
+        <div class="node result">
+          <span class="badge">Resultado</span>
+          <h2>🖌️ Designer Gráfico</h2>
+          <p>Você dá identidade visual e personalidade às marcas.</p>
+        </div>
+      </div>
+
+      <div class="branch res-front">
+        <div class="connector">
+          <div class="line"></div>
+          <span class="tag">Na parte visual do navegador</span>
+          <div class="line"></div>
+          <span class="arrow">▼</span>
+        </div>
+        <div class="node result">
+          <span class="badge">Resultado</span>
+          <h2>🚀 Desenvolvedor Front-end</h2>
+          <p>Você transforma código em interfaces interativas e responsivas.</p>
+        </div>
+      </div>
+
+      <div class="branch res-back">
+        <div class="connector">
+          <div class="line"></div>
+          <span class="tag">Nos servidores e banco de dados</span>
+          <div class="line"></div>
+          <span class="arrow">▼</span>
+        </div>
+        <div class="node result">
+          <span class="badge">Resultado</span>
+          <h2>🧠 Desenvolvedor Back-end</h2>
+          <p>Você constrói a inteligência, segurança e regras por trás dos sistemas.</p>
+        </div>
+      </div>
+
+    </div>
+  </form>
+
+</body>
+</html>
